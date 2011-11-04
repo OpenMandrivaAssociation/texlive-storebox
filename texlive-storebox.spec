@@ -53,6 +53,7 @@ the same as save boxes.
 #- source
 %doc %{_texmfdistdir}/source/latex/storebox/storebox.dtx
 %doc %{_texmfdistdir}/source/latex/storebox/storebox.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -63,3 +64,5 @@ the same as save boxes.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
