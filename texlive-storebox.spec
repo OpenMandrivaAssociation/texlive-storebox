@@ -1,11 +1,11 @@
-# revision 24355
+# revision 24895
 # category Package
 # catalog-ctan /macros/latex/contrib/storebox
-# catalog-date 2011-10-21 09:17:17 +0200
+# catalog-date 2011-12-21 11:26:33 +0100
 # catalog-license lppl1.3
-# catalog-version 1.1
+# catalog-version 1.3a
 Name:		texlive-storebox
-Version:	1.1
+Version:	1.3a
 Release:	1
 Summary:	Storing information for reuse
 Group:		Publishing
@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 The package provides "store boxes" whose user interface matches
@@ -31,23 +28,24 @@ pdfLaTeX and LuaLaTeX; when DVI is output, store boxes behave
 the same as save boxes.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/tex/latex/storebox/storebox-pgf.sty
 %{_texmfdistdir}/tex/latex/storebox/storebox.sty
 %doc %{_texmfdistdir}/doc/latex/storebox/README
 %doc %{_texmfdistdir}/doc/latex/storebox/storebox.pdf
