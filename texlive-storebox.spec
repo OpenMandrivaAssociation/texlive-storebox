@@ -27,16 +27,8 @@ often it is used. The present version of the package supports
 pdfLaTeX and LuaLaTeX; when DVI is output, store boxes behave
 the same as save boxes.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -52,7 +44,6 @@ the same as save boxes.
 #- source
 %doc %{_texmfdistdir}/source/latex/storebox/storebox.dtx
 %doc %{_texmfdistdir}/source/latex/storebox/storebox.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -63,5 +54,3 @@ the same as save boxes.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
