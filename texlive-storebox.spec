@@ -54,3 +54,21 @@ the same as save boxes.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.3a-2
++ Revision: 756251
+- Rebuild to reduce used resources
+
+* Mon Dec 26 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.3a-1
++ Revision: 745329
+- texlive-storebox
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
++ Revision: 719592
+- texlive-storebox
+- texlive-storebox
+- texlive-storebox
+- texlive-storebox
+
