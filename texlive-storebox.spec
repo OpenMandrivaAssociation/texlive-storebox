@@ -6,7 +6,7 @@
 # catalog-version 1.3a
 Name:		texlive-storebox
 Version:	1.3a
-Release:	4
+Release:	5
 Summary:	Storing information for reuse
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/storebox
