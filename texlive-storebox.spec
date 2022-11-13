@@ -1,19 +1,13 @@
-# revision 24895
-# category Package
-# catalog-ctan /macros/latex/contrib/storebox
-# catalog-date 2011-12-21 11:26:33 +0100
-# catalog-license lppl1.3
-# catalog-version 1.3a
 Name:		texlive-storebox
-Version:	1.3a
-Release:	11
+Version:	64967
+Release:	1
 Summary:	Storing information for reuse
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/storebox
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/storebox.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/storebox.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/storebox.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/storebox.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/storebox.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/storebox.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -28,12 +22,12 @@ pdfLaTeX and LuaLaTeX; when DVI is output, store boxes behave
 the same as save boxes.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -47,28 +41,11 @@ the same as save boxes.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.3a-2
-+ Revision: 756251
-- Rebuild to reduce used resources
-
-* Mon Dec 26 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.3a-1
-+ Revision: 745329
-- texlive-storebox
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
-+ Revision: 719592
-- texlive-storebox
-- texlive-storebox
-- texlive-storebox
-- texlive-storebox
-
