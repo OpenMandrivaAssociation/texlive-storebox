@@ -1,6 +1,6 @@
 Name:		texlive-storebox
 Version:	64967
-Release:	1
+Release:	2
 Summary:	Storing information for reuse
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/storebox
