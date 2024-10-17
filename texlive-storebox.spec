@@ -3,7 +3,7 @@ Version:	64967
 Release:	2
 Summary:	Storing information for reuse
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/storebox
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/storebox
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/storebox.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/storebox.doc.r%{version}.tar.xz
